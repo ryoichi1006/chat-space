@@ -17,26 +17,25 @@
     height: 20px;
     width: 260px;
     display: flex;
+    position: relative;
     justify-content: space-between;
     line-height: 20px;
-    &__name{
-      font-size: 16px;
-      font-weight: bold;
-      color: $font-color;
-    }
-    &__icons{
-      text-align: right;
-      color: $font-color;
-      font-weight: bold;
-      text-decoration: none;
-      .fa-cog{
+      &__name{
         font-size: 16px;
-        margin-left: 5px;
+        font-weight: bold;
+        color: $font-color;
       }
-      .fa-edit{
-        font-size: 16px;
+      &__icons{
+        .icon{
+          color: $font-color;
+          font-weight: bold;
+          font-size: 16px;
+          margin-left: 5px;
+        }
+        a{
+          text-decoration: none;
+        }
       }
-    }
   }
   }
   &__group-list{
