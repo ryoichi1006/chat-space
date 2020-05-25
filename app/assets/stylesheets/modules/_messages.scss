@@ -39,16 +39,24 @@
   }
   }
   &__group-list{
-    color: $font-color;
-    font-size: 15px;
-    padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .new{
-    font-size: 11px;
-    padding-top: 5px;
-    padding-bottom: 40px;
+    .group{
+      &__name{
+        color: $font-color;
+        font-size: 15px;
+        padding-top: 20px;
+      }
+      &__message{
+        color: $font-color;
+        font-size: 11px;
+        padding-bottom: 40px;
+        padding-top: 5px;
+      }
+      a{
+        text-decoration: none;
+      }
+    }
   }
 }
 
