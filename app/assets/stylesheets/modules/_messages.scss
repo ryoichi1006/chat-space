@@ -81,8 +81,15 @@
       font-size: 20px;
       .member-name{
         color: #999999;
-      font-size: 12px;
-      padding-top: 15px;
+        font-size: 12px;
+        padding-top: 15px;
+        display: flex;
+        ul{
+          li{
+            float: left;
+            margin-left: 5px;
+          }
+        }
       }
     }
     .edit-btn{
@@ -98,53 +105,67 @@
       }
     }
   }
+
   &__message-list{
     height: calc(100vh - 100px - 90px);
     padding: 35px 0px 0px 40px;
-    .chat-user{
-      color: #333333;
-      font-size: 16px;
-      float: left;
-      margin-right: 10px;
-      font-weight: bold;
-    }
-    .time{
-      color: #999999;
-      font-size: 12px;
-    }
-    .chat-message{
-      margin-top: 12px;
-      color: #434A54;
-      font-size: 14px;
-      margin-bottom: 46px;
+    overflow: scroll;
+    .message{
+      padding-bottom: 40px;
+      .upper-message{
+        display: flex;
+        margin-bottom: 10px;
+        &__user-name{
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      .lower-message{
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 10px;
+        &__content{
+          display: block;
+        }
+        &__image{
+          
+        }
+      }
     }
   }
+
   &__message-form{
     background-color: #d2d2d2;
     height: 90px;
     margin-bottom: 0;
     display: flex;
     padding: 20px 40px;
-
     form{
-      width: 100%;
-      display: flex;
-      .input-box{
-        display: flex;
-        width: 100%;
         position: relative;
-        &__text{
-          height: 50px;
-          width: 100%;
-          border-style: none;
-          padding: 0 10px;
-        }
+        width: 100%;
+        display: flex;
+      .text{
+        height: 50px;
+        width: 100%;
+        padding: 0 10px;
+      }
+      .form_box{
         &__image{
-          font-size: 22px;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          &__file{
+          width: 100%;
+          position: relative;
+          .icon{
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            font-size: 22px;
+          }
+          .file{
             display: none;
           }
         }
@@ -157,6 +178,6 @@
         color: $font-color;
         margin-left: 15px;
       }
-  }
+    }
   }
 }

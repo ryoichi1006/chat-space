@@ -1,24 +1,25 @@
 .chat-main
   .chat-main__group-info
     .test-text
-      test
+      = @group.name
       .member-name
-        Member : masa
-    %button{type: "button", class:'edit-btn', onclick: "location.href='#'"}
+        Member :
+        %ul
+          - @group.users.each do |user|
+            %li= user.name
+        
+    %button{type: "button", class:'edit-btn', onclick: "location.href='edit'"}
       .btn
         Edit
   .chat-main__message-list
-    .chat-user
-      masa
-    .time
-      2020/05/20(Wed) 14:45:02
-    .chat-message
-      おはよう！
+    = render @messages
   .chat-main__message-form
-    %form.new_message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          .far.fa-image
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn", value: "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'text', placeholder: 'type a message'
+      .form_box
+        = f.label :image, class: 'form_box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'submit-btn'
+
+
